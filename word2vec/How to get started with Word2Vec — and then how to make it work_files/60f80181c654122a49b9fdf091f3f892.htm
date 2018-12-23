@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html><head><title>read opinrank user reviews data into a list. – Medium</title><meta name="description" content="read opinrank user reviews data into a list."><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!-- base href="https://medium.freecodecamp.org/media/60f80181c654122a49b9fdf091f3f892?postId=d0a2fca9dad3" --><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="60f80181c654122a49b9fdf091f3f892_data/1d7726b1f2ea97d9afcb3d39c9286d15.js" charset="utf-8"></script><link rel="stylesheet" href="915e1c013f235f3e03c02844e01a56cd_data/gist-embed-008c1f8902a4b39d6abe3c79640a748e.css"><div id="gist86150842" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-word2vec-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-word2vec-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-word2vec-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">read_input</span>(<span class="pl-smi">input_file</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-word2vec-py-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">"""</span>This method reads the input file which is in gzip format<span class="pl-pds">"""</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-word2vec-py-LC3" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-word2vec-py-LC4" class="blob-code blob-code-inner js-file-line">    logging.info(<span class="pl-s"><span class="pl-pds">"</span>reading file <span class="pl-c1">{0}</span>...this may take a while<span class="pl-pds">"</span></span>.format(input_file))</td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-word2vec-py-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">with</span> gzip.open(input_file, <span class="pl-s"><span class="pl-pds">'</span>rb<span class="pl-pds">'</span></span>) <span class="pl-k">as</span> f:</td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-word2vec-py-LC6" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span> i, line <span class="pl-k">in</span> <span class="pl-c1">enumerate</span>(f):</td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-word2vec-py-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-word2vec-py-LC8" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">if</span> (i <span class="pl-k">%</span> <span class="pl-c1">10000</span> <span class="pl-k">==</span> <span class="pl-c1">0</span>):</td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-word2vec-py-LC9" class="blob-code blob-code-inner js-file-line">                logging.info(<span class="pl-s"><span class="pl-pds">"</span>read <span class="pl-c1">{0}</span> reviews<span class="pl-pds">"</span></span>.format(i))</td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-word2vec-py-LC10" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">#</span> do some pre-processing and return list of words for each review</span></td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-word2vec-py-LC11" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">#</span> text</span></td>
+      </tr>
+      <tr>
+        <td id="file-word2vec-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-word2vec-py-LC12" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">yield</span> gensim.utils.simple_preprocess(line)</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/kavgan/1d7726b1f2ea97d9afcb3d39c9286d15/raw/66eb9354f9bcc5f9852a70cbfe0a17ae64ba0d16/word2vec.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/kavgan/1d7726b1f2ea97d9afcb3d39c9286d15#file-word2vec-py">word2vec.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200;function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height); resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);}maybeResize();</script></body></html>
